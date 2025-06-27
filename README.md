@@ -1,5 +1,10 @@
 # Gemini Generated Chat App
 
+- [English](#gemini-generated-chat-app)
+- [日本語](#gemini生成チャットアプリ)
+
+---
+
 A real-time chat application built with SvelteKit and Firebase, demonstrating user authentication and real-time messaging capabilities.
 
 ## Features
@@ -139,34 +144,16 @@ This project is configured to automatically deploy to Firebase Hosting via GitHu
 ```
 gemini-generated-chat-app/
 ├── src/
-│   ├── app.css             # Global styles
-│   ├── app.d.ts            # TypeScript declarations
-│   ├── app.html            # Main HTML template
 │   ├── lib/                # Reusable components and utilities
-│   │   ├── firebase.ts     # Firebase initialization
-│   │   ├── index.ts        # Library entry point
-│   │   ├── stores.ts       # Svelte stores for state management
 │   │   └── components/     # Svelte components
-│   │       ├── DrawingCanvas.svelte
-│   │       ├── Message.svelte
-│   │       ├── MessageInput.svelte
-│   │       └── Sidebar.svelte
 │   └── routes/             # SvelteKit routes (pages and layouts)
-│       ├── +layout.svelte  # Main layout for the application
-│       ├── +layout.ts      # Layout logic (e.g., authentication check)
-│       ├── +page.svelte    # Redirects to chat or login
 │       ├── chat/           # Chat room specific routes
 │       │   └── [roomId]/   # Dynamic route for chat rooms
-│       │       ├── +page.svelte
-│       │       └── +page.ts
 │       ├── create-room/    # Route for creating new chat rooms
-│       │   └── +page.svelte
 │       ├── login/          # Login page
-│       │   └── +page.svelte
 │       └── signup/         # Sign up page
-│           └── +page.svelte
 └── static/                 # Static assets (e.g., favicon)
-    └── favicon.png
+```
 
 ## Contributing
 
@@ -319,34 +306,16 @@ pnpm dev
 ```
 gemini-generated-chat-app/
 ├── src/
-│   ├── app.css             # Global styles
-│   ├── app.d.ts            # TypeScript declarations
-│   ├── app.html            # Main HTML template
-│   ├── lib/                # Reusable components and utilities
-│   │   ├── firebase.ts     # Firebase initialization
-│   │   ├── index.ts        # Library entry point
-│   │   ├── stores.ts       # Svelte stores for state management
-│   │   └── components/     # Svelte components
-│   │       ├── DrawingCanvas.svelte
-│   │       ├── Message.svelte
-│   │       ├── MessageInput.svelte
-│   │       └── Sidebar.svelte
-│   └── routes/             # SvelteKit routes (pages and layouts)
-│       ├── +layout.svelte  # Main layout for the application
-│       ├── +layout.ts      # Layout logic (e.g., authentication check)
-│       ├── +page.svelte    # Redirects to chat or login
-│       ├── chat/           # Chat room specific routes
-│       │   └── [roomId]/   # Dynamic route for chat rooms
-│       │       ├── +page.svelte
-│       │       └── +page.ts
-│       ├── create-room/    # Route for creating new chat rooms
-│       │   └── +page.svelte
-│       ├── login/          # Login page
-│       │   └── +page.svelte
-│       └── signup/         # Sign up page
-│           └── +page.svelte
-└── static/                 # Static assets (e.g., favicon)
-    └── favicon.png
+│   ├── lib/                # 再利用可能なコンポーネントとユーティリティ
+│   │   └── components/     # Svelteコンポーネント
+│   └── routes/             # SvelteKitルート（ページとレイアウト）
+│       ├── chat/           # チャットルーム固有のルート
+│       │   └── [roomId]/   # チャットルームの動的ルート
+│       ├── create-room/    # 新しいチャットルームを作成するためのルート
+│       ├── login/          # ログインページ
+│       └── signup/         # サインアップページ
+└── static/                 # 静的アセット（例: ファビコン）
+```
 
 ## 貢献
 
