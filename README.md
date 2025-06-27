@@ -150,6 +150,41 @@ To run the application using Firebase Emulators for local development and testin
     The application will automatically connect to the running emulators when in development mode.
     開発モードの場合、アプリケーションは実行中のエミュレータに自動的に接続します。
 
+### Deploying with GitHub Actions
+### GitHub Actionsでのデプロイ
+
+This project is configured to automatically deploy to Firebase Hosting via GitHub Actions when changes are pushed to the `release` branch.
+
+このプロジェクトは、`release` ブランチにプッシュされた変更をトリガーとして、GitHub Actionsを介してFirebase Hostingに自動的にデプロイするように設定されています。
+
+**Setup Steps:**
+**セットアップ手順:**
+
+1.  **Firebase Service Account Key**: Obtain a Firebase service account key from your Firebase project settings (`Project settings` -> `Service accounts` -> `Generate new private key`).
+    **Firebaseサービスアカウントキー**: Firebaseプロジェクトの設定（`プロジェクトの設定` -> `サービスアカウント` -> `新しい秘密鍵を生成`）からFirebaseサービスアカウントキーを取得します。
+
+2.  **GitHub Secrets**: Add the content of the downloaded JSON key file as a GitHub Secret named `FIREBASE_SERVICE_ACCOUNT_YOUR_PROJECT_ID` (replace `YOUR_PROJECT_ID` with your actual Firebase project ID in uppercase, e.g., `FIREBASE_SERVICE_ACCOUNT_GEMINI_GENERATED_CHAT_APP`).
+    **GitHub Secrets**: ダウンロードしたJSONキーファイルの内容を、`FIREBASE_SERVICE_ACCOUNT_YOUR_PROJECT_ID` という名前のGitHub Secretとして追加します（`YOUR_PROJECT_ID` は実際のFirebaseプロジェクトIDを大文字にしたものに置き換えてください。例: `FIREBASE_SERVICE_ACCOUNT_GEMINI_GENERATED_CHAT_APP`）。
+
+3.  **Firebase Public Environment Variables**: Also add the following Firebase public environment variables as GitHub Secrets, using the values from your `.env` file:
+    *   `PUBLIC_FIREBASE_API_KEY`
+    *   `PUBLIC_FIREBASE_AUTH_DOMAIN`
+    *   `PUBLIC_FIREBASE_PROJECT_ID`
+    *   `PUBLIC_FIREBASE_STORAGE_BUCKET`
+    *   `PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+    *   `PUBLIC_FIREBASE_APP_ID`
+    **Firebase公開環境変数**: また、`.env` ファイルの値を使用して、以下のFirebase公開環境変数をGitHub Secretsとして追加します。
+
+4.  **Trigger Deployment**: Push your changes to the `release` branch:
+    **デプロイのトリガー**: `release` ブランチに変更をプッシュします。
+
+    ```bash
+    git push origin release
+    ```
+
+    The GitHub Actions workflow will automatically build and deploy your application to Firebase Hosting. You can monitor the deployment status in your GitHub repository's `Actions` tab.
+    GitHub Actionsワークフローは、アプリケーションを自動的にビルドし、Firebase Hostingにデプロイします。デプロイ状況は、GitHubリポジトリの`Actions`タブで監視できます。
+
 ## Project Structure
 ## プロジェクト構造
 
