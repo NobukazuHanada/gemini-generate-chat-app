@@ -118,7 +118,7 @@ To run the application using Firebase Emulators for local development and testin
 
 ### Deploying with GitHub Actions
 
-This project is configured to automatically deploy to Firebase Hosting via GitHub Actions when changes are pushed to the `release` branch.
+This project is configured to automatically deploy to Firebase Hosting via GitHub Actions when a new tag (e.g., `v1.0.0`) is pushed.
 
 **Setup Steps:**
 
@@ -131,10 +131,11 @@ This project is configured to automatically deploy to Firebase Hosting via GitHu
     *   `PUBLIC_FIREBASE_STORAGE_BUCKET`
     *   `PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
     *   `PUBLIC_FIREBASE_APP_ID`
-4.  **Trigger Deployment**: Push your changes to the `release` branch:
+4.  **Trigger Deployment**: Create and push a new tag:
 
     ```bash
-    git push origin release
+    git tag v1.0.0
+    git push origin v1.0.0
     ```
 
     The GitHub Actions workflow will automatically build and deploy your application to Firebase Hosting. You can monitor the deployment status in your GitHub repository's `Actions` tab.
@@ -273,14 +274,14 @@ pnpm preview
 2.  **アプリケーションの実行**: 別のターミナルで、通常通りSvelteKit開発サーバーを起動します。
 
     ```bash
-pnpm dev
-```
+    pnpm dev
+    ```
 
     開発モードの場合、アプリケーションは実行中のエミュレータに自動的に接続します。
 
 ### GitHub Actionsでのデプロイ
 
-このプロジェクトは、`release` ブランチにプッシュされた変更をトリガーとして、GitHub Actionsを介してFirebase Hostingに自動的にデプロイするように設定されています。
+このプロジェクトは、新しいタグ（例: `v1.0.0`）がプッシュされたときにGitHub Actionsを介してFirebase Hostingに自動的にデプロイするように設定されています。
 
 **セットアップ手順:**
 
@@ -293,10 +294,11 @@ pnpm dev
     *   `PUBLIC_FIREBASE_STORAGE_BUCKET`
     *   `PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
     *   `PUBLIC_FIREBASE_APP_ID`
-4.  **デプロイのトリガー**: `release` ブランチに変更をプッシュします。
+4.  **デプロイのトリガー**: 新しいタグを作成してプッシュします。
 
     ```bash
-    git push origin release
+    git tag v1.0.0
+    git push origin v1.0.0
     ```
 
     GitHub Actionsワークフローは、アプリケーションを自動的にビルドし、Firebase Hostingにデプロイします。デプロイ状況は、GitHubリポジトリの`Actions`タブで監視できます。

@@ -2,8 +2,8 @@ name: Deploy to Firebase Hosting on Release Push
 
 on:
   push:
-    branches:
-      - release
+    tags:
+      - 'v*' # Push events to matching v*, e.g. v1.0.0
 
 jobs:
   build_and_deploy:
