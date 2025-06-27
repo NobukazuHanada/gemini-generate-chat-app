@@ -29,3 +29,6 @@ firestore-debug.log
 # Screenshots
 screenshot2.png
 screenshot3.png
+
+# Firebase
+.firebase/
